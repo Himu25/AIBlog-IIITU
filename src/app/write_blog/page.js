@@ -115,7 +115,7 @@ export default function Page() {
   const generateAns = async (story) => {
     try {
       const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.GOOGLE_GEMINI_API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.NEXT_PUBLIC_GOOGLE_GEMINI_API_KEY}`,
         {
           method: "POST",
           headers: {
@@ -164,7 +164,7 @@ export default function Page() {
         {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${process.env.HUGGING_FACE_API_KEY}`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_HUGGING_FACE_API_KEY}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(data),
