@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Academic{
+  background: rgba(215, 45, 45,0.3);
+}
+.Career{
+  background: #da85c731;
+}
+.Technology{
+  background: #7fb88133;
+}
+.Fest{
+  background: #ff795736;
+}
+.Club{
+  background: #ffb04f45;
+}
+.Travel{
+  background: #5e4fff31;
+}
+.Coding{
+  background: #0d274434;
+}
+.Health{
+  background: #58106731;
+}
+.text-Academic{
+  color: rgba(215, 45, 45,1);
+}
+.text-Career{
+  color: #da85c7;
+}
+.text-Technology{
+  color: #7fb881;
+}
+.text-Fest{
+  color: #ff7957;
+}
+.text-Club{
+  color: #ffb04f;
+}
+.text-Travel{
+  color: #5e4fff;
+}
+.text-Coding{
+  color: #0d2744;
+}
+.text-Health{
+  color: #581067;
+}
