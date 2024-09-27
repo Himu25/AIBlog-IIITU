@@ -46,7 +46,7 @@ export default async function RecentPost({ page, category }) {
               <div className="flex flex-col justify-center">
                 <div className="text-xs uppercase font-semibold text-gray-600">
                   {post.createdAt.substring(0, 10)} -{" "}
-                  <span className={`text-red-500 ms-1 capitalize`}>
+                  <span className={`ms-1 capitalize text-${post.catSlug}`}>
                     {post.catSlug}
                   </span>
                 </div>

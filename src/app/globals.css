@@ -2,51 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-.Academic{
-  background: rgba(215, 45, 45,0.3);
+.Academic {
+  background: rgba(215, 45, 45, 0.3);
 }
-.Career{
+.Career {
   background: #da85c731;
 }
-.Technology{
+.Technology {
   background: #7fb88133;
 }
-.Fest{
+.Fest {
   background: #ff795736;
 }
-.Club{
+.Club {
   background: #ffb04f45;
 }
-.Travel{
+.Travel {
   background: #5e4fff31;
 }
-.Coding{
+.Coding {
   background: #0d274434;
 }
-.Health{
+.Health {
   background: #58106731;
 }
-.text-Academic{
-  color: rgba(215, 45, 45,1);
+.text-Academic {
+  color: #d72d2d; /* rgba(215, 45, 45, 1) */
 }
-.text-Career{
-  color: #da85c7;
+.text-Career {
+  color: #da85c7; /* #da85c7 (unchanged) */
 }
-.text-Technology{
-  color: #7fb881;
+.text-Technology {
+  color: #7fb881; /* #7fb881 (unchanged) */
 }
-.text-Fest{
-  color: #ff7957;
+.text-Fest {
+  color: #ff7957; /* #ff7957 (unchanged) */
 }
-.text-Club{
-  color: #ffb04f;
+.text-Club {
+  color: #ffb04f; /* #ffb04f (unchanged) */
 }
-.text-Travel{
-  color: #5e4fff;
+.text-Travel {
+  color: #5e4fff; /* #5e4fff (unchanged) */
 }
-.text-Coding{
-  color: #0d2744;
+.text-Coding {
+  color: #0d2744; /* #0d2744 (unchanged) */
 }
-.text-Health{
-  color: #581067;
+.text-Health {
+  color: #581067; /* #581067 (unchanged) */
+}
+
+.PopularAcademic {
+  background: rgba(215, 45, 45, 0.05); /* Very light red */
+  border-left: 4px solid #d72d2d; /* Darker red */
+}
+
+.PopularCareer {
+  background: rgba(218, 133, 199, 0.05); /* Very light pink */
+  border-left: 4px solid #da85c7; /* Darker pink */
+}
+
+.PopularTechnology {
+  background: rgba(127, 184, 129, 0.05); /* Very light green */
+  border-left: 4px solid #7fb881; /* Darker green */
+}
+
+.PopularFest {
+  background: rgba(255, 121, 87, 0.05); /* Very light orange */
+  border-left: 4px solid #ff7957; /* Darker orange */
+}
+
+.PopularClub {
+  background: rgba(255, 176, 79, 0.05); /* Very light yellow */
+  border-left: 4px solid #ffb04f; /* Darker yellow */
+}
+
+.PopularTravel {
+  background: rgba(94, 79, 255, 0.05); /* Very light blue */
+  border-left: 4px solid #5e4fff; /* Darker blue */
+}
+
+.PopularCoding {
+  background: rgba(13, 39, 68, 0.05); /* Very light dark blue */
+  border-left: 4px solid #0d2744; /* Darker dark blue */
+}
+
+.PopularHealth {
+  background: rgba(88, 16, 103, 0.05); /* Very light purple */
+  border-left: 4px solid #581067; /* Darker purple */
 }
