@@ -3,7 +3,7 @@ import Comments from "@/app/components/Comments";
 import MostPopular from "@/app/components/MostPopular";
 
 const getData = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  const res = await fetch(`${process.env.BASE_URL}/api/posts/${id}`, {
     cache: "no-cache",
   });
   if (!res.ok) {

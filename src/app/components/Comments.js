@@ -15,9 +15,7 @@ const Comments = ({ id }) => {
   const fetchData = async (issilent) => {
     try {
       if (!issilent) setLoading(true);
-      const response = await fetch(
-        `http://localhost:3000/api/comments?id=${id}`
-      );
+      const response = await fetch(`/api/comments?id=${id}`);
       const data = await response.json();
       setComments(data);
     } catch (error) {
@@ -38,7 +36,7 @@ const Comments = ({ id }) => {
         return router.push("/login");
       }
       setIsLoading(true);
-      const response = await fetch("http://localhost:3000/api/comments", {
+      const response = await fetch("/api/comments", {
         method: "POST",
         body: JSON.stringify({ desc, postID: id }),
         headers: {

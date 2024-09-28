@@ -6,7 +6,7 @@ import { stripHtml } from "../utils/sanitizeHtml";
 
 const getData = async (page, category) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&category=${category || ""}`,
+    `${process.env.BASE_URL}/api/posts?page=${page}&category=${category || ""}`,
     {
       cache: "no-cache",
     }

@@ -2,13 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import gallery from "../assets/gallery.png";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-  uploadBytes,
-} from "firebase/storage";
+import { getStorage, ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { app } from "../utils/firebase";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
@@ -42,7 +36,7 @@ export default function Page() {
         // Upload image if selected
       }
 
-      const res = await fetch("http://localhost:3000/api/posts", {
+      const res = await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
           title: title || "",
@@ -86,7 +80,7 @@ export default function Page() {
 
   useEffect(() => {
     const fetchCategory = async () => {
-      const response = await fetch(`http://localhost:3000/api/categories`);
+      const response = await fetch(`/api/categories`);
       if (response.status === 200) {
         const json = await response.json();
         setCats(json);
