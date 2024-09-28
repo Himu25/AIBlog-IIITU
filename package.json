@@ -30,6 +30,7 @@
   "devDependencies": {
     "autoprefixer": "^10",
     "daisyui": "^3.9.3",
+    "encoding": "^0.1.13",
     "postcss": "^8",
     "prisma": "^5.2.0",
     "tailwindcss": "^3"
