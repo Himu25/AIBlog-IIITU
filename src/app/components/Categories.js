@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const getData = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/api/categories`, {
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
     cache: "no-cache",
   });
   if (!res.ok) {

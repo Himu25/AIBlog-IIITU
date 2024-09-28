@@ -36,7 +36,7 @@ const Comments = ({ id }) => {
         return router.push("/login");
       }
       setIsLoading(true);
-      const response = await fetch("/api/comments", {
+      const response = await fetch(`/api/comments`, {
         method: "POST",
         body: JSON.stringify({ desc, postID: id }),
         headers: {

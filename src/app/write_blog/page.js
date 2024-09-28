@@ -36,7 +36,7 @@ export default function Page() {
         // Upload image if selected
       }
 
-      const res = await fetch("/api/posts", {
+      const res = await fetch(`/api/posts`, {
         method: "POST",
         body: JSON.stringify({
           title: title || "",

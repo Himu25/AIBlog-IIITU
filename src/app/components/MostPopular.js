@@ -2,7 +2,7 @@ import React from "react";
 
 // Function to fetch most viewed posts from API
 const getData = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/api/posts/most-viewed`, {
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/most-viewed`, {
     cache: "no-cache",
   });
   if (!res.ok) {
