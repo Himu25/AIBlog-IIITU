@@ -81,7 +81,7 @@ export default async function MostPopular() {
   const todayDate = formatDate(new Date());
 
   return (
-    <div className="mt-8 px-10">
+    <div className="mt-8 px-4 sm:px-10">
       <p className="text-sm font-semibold text-gray-600">Most Popular</p>
       <h4 className="text-2xl font-bold text-gray-800 mb-6">
         Top Picks: Most Viewed

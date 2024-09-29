@@ -56,7 +56,7 @@ const Comments = ({ id }) => {
 
   return (
     <>
-      <form className="w-full p-8 pb-4 rounded-lg">
+      <form className="w-full sm:p-8 p-4 pb-4 rounded-lg">
         <div className="flex flex-row items-center gap-3">
           <input
             className="w-full h-12 px-4 py-2 border rounded-lg border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -98,7 +98,7 @@ const Comments = ({ id }) => {
           )}
         </div>
       </form>
-      <div className="p-8 pt-0 rounded-lg mt-2">
+      <div className="sm:p-8 p-4 pt-0 rounded-lg mt-2">
         {loading ? (
           <p className="text-center text-gray-500">Loading...</p>
         ) : (

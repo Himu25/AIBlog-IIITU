@@ -6,7 +6,7 @@ export default function BlogContent({ post }) {
   if (!post) return <p>Loading...</p>; // Handle case where post data is not yet available
 
   return (
-    <div className="flex flex-col lg:flex-row gap-10 items-start lg:items-start p-8 max-w-7xl mx-auto">
+    <div className="flex flex-col lg:flex-row gap-10 items-start lg:items-start sm:p-8 px-4 mt-4 max-w-7xl mx-auto">
       {/* Image Section */}
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
         <div className="relative w-full h-[300px] lg:h-[400px]">

@@ -31,20 +31,22 @@ export default async function RecentPost({ page, category }) {
   return (
     <>
       {posts && (
-        <div className="my-12 px-10">
+        <div className="my-12 sm:px-10 px-4">
           {posts.map((post) => (
             <div
               className="grid md:grid-cols-2 gap-8 mt-8 md:px-10 capitalize items-start"
               key={post.id}
             >
+              {/* Image Section */}
               <Image
                 src={post.img || img1}
                 width={400}
                 height={400}
                 alt={`Image for ${post.title}`}
-                className="rounded-lg shadow-lg hover:brightness-90 transition duration-300 ease-in-out"
+                className="rounded-lg shadow-lg hover:brightness-90 transition duration-300 ease-in-out w-full md:w-auto" // Make the image full width on mobile
               />
 
+              {/* Text Section */}
               <div className="flex flex-col justify-center">
                 <div className="text-xs uppercase font-semibold text-gray-600">
                   {post.createdAt.substring(0, 10)} -{" "}
@@ -69,10 +71,10 @@ export default async function RecentPost({ page, category }) {
               </div>
             </div>
           ))}
-
-          <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
         </div>
       )}
+
+      <Pagination page={page} hasNext={hasNext} hasPrev={hasPrev} />
     </>
   );
 }
