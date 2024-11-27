@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import gallery from "../assets/gallery.png";
-import { useRouter } from "next/navigation";
+import { useRouter } from "nextjs-toploader/app";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 import { FaImage, FaRegEdit, FaRegPaperPlane, FaTag } from "react-icons/fa";

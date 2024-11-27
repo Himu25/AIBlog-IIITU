@@ -7,7 +7,7 @@ import facebook from "../assets/facebook.svg";
 import github from "../assets/github.svg";
 import google from "../assets/google.svg";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter } from "nextjs-toploader/app";
 
 export default function page() {
   const navigate = useRouter();
