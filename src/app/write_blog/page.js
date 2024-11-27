@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import gallery from "../assets/gallery.png";
-import { getStorage, ref, getDownloadURL, uploadBytes } from "firebase/storage";
-import { app } from "../utils/firebase";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
@@ -61,19 +59,30 @@ export default function Page() {
     }
   };
 
-  const storage = getStorage(app);
   const upload = async () => {
     if (!file) return "";
 
     try {
-      const name = new Date().getTime() + file.name;
-      const storageRef = ref(storage, name);
-      const snapshot = await uploadBytes(storageRef, file); // Simplified file upload
-      const downloadURL = await getDownloadURL(snapshot.ref);
-      console.log(downloadURL);
-      return downloadURL;
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "veeyokaq");
+      formData.append("cloud_name", "ds4unopik");
+
+      const response = await fetch(
+        "https://api.cloudinary.com/v1_1/ds4unopik/image/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (!response.ok) throw new Error("Failed to upload to Cloudinary");
+
+      const data = await response.json();
+      console.log("File uploaded successfully:", data.secure_url);
+      return data.secure_url;
     } catch (error) {
-      console.error("Upload failed", error);
+      console.error("Error uploading to Cloudinary:", error.message);
       return "";
     }
   };
@@ -136,7 +145,7 @@ export default function Page() {
   const handleRegenerateStory = async () => {
     setGeneratingStory(true);
     const response = await generateAns(
-      `Please correct the grammar and regenerate: ${story}`
+      `Please correct the grammar and regenerate in same format: ${story}`
     );
     setStory(response);
     setGeneratingStory(false);
@@ -292,6 +301,7 @@ export default function Page() {
       <div className="flex flex-col gap-4 md:flex-row justify-between items-center">
         <select
           value={selectedcat}
+          required={true}
           onChange={(e) => setSelectedcat(e.target.value)}
           className="bg-gray-50 text-base md:text-lg border border-gray-300 p-2 md:p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300 ease-in-out hover:border-indigo-500 w-full md:w-auto md:min-w-max"
           style={{ maxWidth: "fit-content" }}
@@ -304,7 +314,6 @@ export default function Page() {
           ))}
         </select>
 
-        {/* Button group adjusted for desktop */}
         <div className="flex flex-col gap-4 md:flex-row justify-center md:justify-end items-center w-full md:w-auto">
           <button
             type="button"
@@ -342,12 +351,13 @@ export default function Page() {
             ) : (
               <FaRegPaperPlane />
             )}
-            Regenerate Story
+            Refine Story
           </button>
         </div>
       </div>
 
       <button
+        type="submit"
         disabled={loading}
         className={`${
           loading ? "bg-gray-400" : "bg-indigo-600 hover:bg-indigo-700"
